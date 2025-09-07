@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MusicPlayerPage from './pages/MusicPlayerPage';
-import './index.css'; // ❗️ 전역 CSS를 여기서 import 해야 합니다.
+import './index.css';
 
 function App() {
   return (
-    // <Router> 태그로 전체를 감싸야 합니다.
-    <Router>
+    // ▼▼▼ 이 부분이 수정되었습니다 ▼▼▼
+    <Router basename="/musicer/">
       <Routes>
         <Route path="/" element={<MusicPlayerPage />} />
+        {/* 다른 라우트가 필요하면 여기에 추가 */}
       </Routes>
     </Router>
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
   );
 }
 
