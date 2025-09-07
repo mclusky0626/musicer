@@ -51,6 +51,7 @@ body {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: white;
 }
 .header button:hover {
   border-color: #646cff;
@@ -168,6 +169,7 @@ li.playing {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: white;
 }
 
 .save-section button:hover {
@@ -280,4 +282,70 @@ li.playing {
   background-color: #333;
   color: #fff;
   box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+}
+/* === 재생목록 아이템 스타일 === */
+.playlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.playlist-actions {
+  display: flex;
+  gap: 5px;
+}
+.btn-icon {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px;
+}
+.btn-icon:hover {
+  color: #ff6b6b; /* 삭제 버튼은 붉은색으로 */
+}
+
+/* === 현재 재생목록 헤더 스타일 === */
+.playlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-new-playlist {
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: #444;
+  border: none;
+  border-radius: 4px;
+  color: #ccc;
+  cursor: pointer;
+}
+.btn-new-playlist:hover {
+  background-color: #555;
+}
+/* ... 기존 CSS ... */
+
+/* === 가상화 리스트 스타일 === */
+/* === 가상화 리스트 스타일 (TanStack Virtual용) === */
+.list-container {
+  flex-grow: 1;
+  width: 100%;
+  overflow: auto; /* 이 부분이 중요합니다! */
+}
+
+.list-item-virtual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  border-bottom: 1px solid #444;
+  box-sizing: border-box;
+}
+.list-item-virtual:hover {
+  background-color: #3a3a3a;
+}
+.no-results {
+  padding: 20px;
+  text-align: center;
+  color: #888;
 }
